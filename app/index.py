@@ -5,7 +5,7 @@ import redis
 
 client = redis.Redis(
     host=os.environ.get('REDIS_HOST'),
-    port=os.environ.get('REDIST_PORT')
+    port=os.environ.get('REDIS_PORT')
 )
 key = 'ProgramGuid'
 

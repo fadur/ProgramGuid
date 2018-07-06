@@ -7,7 +7,7 @@ client = redis.Redis(
     host=os.environ.get('REDIS_HOST'),
     port=os.environ.get('REDIS_PORT')
 )
-key = 'ProgramGuid4'
+key = 'ProgramGuid43'
 
 def handler(event, context):
     if not client.get(key):

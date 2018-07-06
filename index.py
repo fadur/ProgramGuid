@@ -1,9 +1,10 @@
+import os
 import json
 import datetime
 import redis
 
 client = redis.Redis(
-    host=os.get('REDIS_HOST'),
+    host=os.environ.get('REDIS_HOST'),
     port=os.environ.get('REDIST_PORT')
 )
 key = 'ProgramGuid'

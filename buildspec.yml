@@ -4,8 +4,8 @@ phases:
   install:
     commands:
       - pip install --upgrade awscli
-      - pip install -r requirements.txt
-      - pip install -r -t .
+      - pip install -r -t $(pwd)
+
   pre_build:
     commands:
 

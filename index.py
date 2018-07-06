@@ -2,17 +2,20 @@ import json
 import datetime
 import redis
 
-client = redis.Redis(os.get('REDIS_HOST'))
+client = redis.Redis(
+    host=os.get('REDIS_HOST'),
+    port=os.environ.get('REDIST_PORT')
+)
 key = 'ProgramGuid'
+
 def handler(event, context):
-    if not r.get(key):
-        r.set(key, 70200000000)
-    _next = r.incr(key)
+    if not client.get(key):
+        client.set(key, 70200000000)
+    _next = client.incr(key)
     data = {
         'next': _next,
         'timestamp': datetime.datetime.utcnow().isoformat()
     }
-    red
     return {'statusCode': 200,
             'body': json.dumps(data),
             'headers': {'Content-Type': 'application/json'}}

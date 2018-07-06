@@ -23,5 +23,3 @@ artifacts:
   files:
     - '**/*'
   type: zip
-  files:
-    - template.yml

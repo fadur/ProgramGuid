@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - pip install --upgrade awscli
-      - pip install redis
+      - pip install -r requirements -t app
 
   pre_build:
     commands:
@@ -19,6 +19,9 @@ phases:
       - aws cloudformation package --template template.yml --s3-bucket $S3_BUCKET --output-template template-export.yml
 
 artifacts:
+  base-directory: app
+  files:
+    - '**/*'
   type: zip
   files:
     - template-export.yml

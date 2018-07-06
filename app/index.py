@@ -11,7 +11,7 @@ key = 'ProgramGuid4'
 
 def handler(event, context):
     if not client.get(key):
-        client.set(key, 7200000000)
+        client.set(key, 4280000000)
     _next = client.incr(key)
     data = {
         'next': _next,
